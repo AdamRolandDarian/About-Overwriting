@@ -1,6 +1,4 @@
-# About-Overwriting
 
-### In the example below, the purr and getFeatures methods have been overridden by the GrumpyCat type.
 
 ## Some rules for overwriting are:
 
