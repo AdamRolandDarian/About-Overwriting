@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+
+class CatFeatures {
+}
+
+class GrumpyCatFeatures extends CatFeatures {
+}
+
+class GrumpyFeatures {
+}
+
+class Cat {
+
+	public void purr() {
+		System.out.println("purrrr");
+	}
+
+	public CatFeatures getFeatures() {
+		System.out.println("Cat getFeatures");
+		return new CatFeatures();
+	}
+
+	public final void die() {
+		System.out.println("Dying! frown emoticon");
+	}
+}
+
+public class GrumpyCat extends Cat {
+	@Override
+	public void purr() {
+		System.out.println("NO!");
+	}
+
+	@Override
+	public GrumpyCatFeatures getFeatures() {
+		System.out.println("Grumpy getFeatures");
+		return new GrumpyCatFeatures();
+	}
+
+	public static void main(String[] args) {
+		ArrayList<Cat> cats = new ArrayList<Cat>();
+		cats.add(new Cat());
+		cats.add(new GrumpyCat());
+
+		for (Cat c : cats) {
+			c.purr();
+			c.die();
+			c.getFeatures();
+		}
+	}
+}
